@@ -51,6 +51,6 @@
 <!-- linking script.js -->
 <script src="CA3.js"></script>
 
-<!-- linking jquer.js -->
+<!-- linking jquery.js -->
 <script src="jquery-3.6.0.min.js"></script>
 </html>
