@@ -23,7 +23,7 @@
 	<h2 class="head2">Enter The Numbers Separated by Space </h2>
 	
 	<!-- TextBox to taking input -->
-	<input type="text" id="arrv" onkeyup="submit()"  >
+	<input type="text" id="arrv" onkeyup="validate()"  >
 
 	<!-- Button for generating array -->
 	<button disabled="true" onclick="generatearray()" id="Button1" >Submit </button>
@@ -48,7 +48,6 @@
 
 </center>
 </body>
-
 <!-- linking script.js -->
 <script src="CA3.js"></script>
 
