@@ -11,7 +11,7 @@ var button3=document.getElementById("Button3");
 var button4=document.getElementById("Button4");
 
 //Function to enabling and disabling button1
-function validate(){
+function input(){
 if(Values.value.length>0){
 		button1.disabled = false;
 		button1.style.backgroundColor = "#6f459e";
