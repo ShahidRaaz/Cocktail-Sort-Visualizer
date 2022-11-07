@@ -32,44 +32,45 @@ if(Values.value.length>0){
 
 //function to generate array from given value
 function generatearray() {
-	count=0;
+	let count1=0;
+	let sc=0;
 	//splitting the values into numbers
 	const arrayValues = Values.value;
 		splittedValues= arrayValues.split(' ');
 		resultString = " ";
 		svl=splittedValues.length;
 			for (let i = 0; i < svl; i++) {
+				let j=i+1;
 				if(splittedValues[i]<=100){
+					if((j<=svl)&&(splittedValues[i]<splittedValues[j])){
+						sc++;
+					}
 					resultString += splittedValues[i]+" ";
 				}else
 				{
-					count++;
-					alert("Please Enter the number separated by space")
+					count1++;
 					alert("Any Number should not be greater than 100");
 				}
 			}
-//printing the array
-	if(count==0){
+	if(sc==svl-1){
+		document.getElementById("result").innerHTML ="Given Array is already sorted"
+	}
+	else if(count1==0){
 	document.getElementById("result").innerHTML ="Given Array:"+ resultString;
-
+	
+	// To enable "Generate Bars" Button
+	button3.disabled = false;
+	button3.style.backgroundColor = "#6f459e";
+}
 //css by using jquery for printing input array
-	$(document).ready(function(){
-		$("#result").css({"border":"#6f459e solid 2px","border-radius":"10px","padding":"2px","background-color":"white","color":"black","font-size":"20px"});
-	});
-//function call to enable Clear and Generate bars Button
-	enable();
-}
+$(document).ready(function(){
+	$("#result").css({"border":"#6f459e solid 2px","border-radius":"10px","padding":"2px","background-color":"white","color":"black","font-size":"20px"});
+});
 
+// To enable "Clear" button 
+button2.disabled = false;
+button2.style.backgroundColor = "#6f459e";
 }
-//function to enable Clear and Generate bars Button
-function enable() {
-		// To enable "Clear" button 
-		button2.disabled = false;
-		button2.style.backgroundColor = "#6f459e";
-		// To enable "Generate Bars" Button
-		button3.disabled = false;
-		button3.style.backgroundColor = "#6f459e";
-	  }
 
 // Function to generate bars
 async function generatebars() {
@@ -289,12 +290,13 @@ for (var x = 0; x < bars.length; x++) {
 	resolve();
 	}, 500)
 	);
-//After Sorting Completion to print sorted array
-document.getElementById("sorting").innerHTML ="Sorting Completed and Sorted Array is"+ sorted;
 
+//After Sorting Completion to print sorted array
+alert("Sorting Completed");
+document.getElementById("sorting").innerHTML ="Sorted Array is"+ sorted;
 }
 
-//To reset the all values and graph
+//To clear the all values and graph
 function removevalues(){
 	window.location.reload();
 }
