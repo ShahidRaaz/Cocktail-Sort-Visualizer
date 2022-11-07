@@ -53,17 +53,22 @@ function generatearray() {
 					alert("Any Number should not be greater than 100");
 				}
 			}
-	if(count==0 && snc==svl-1){
+	if(count==0){
+	if(snc==svl-1){
 		document.getElementById("result").innerHTML ="Given Array is already sorted"
-		array();
 	}
-	else if(count==0 && snc==0){
+	else{
 	document.getElementById("result").innerHTML ="Given Array :"+ resultString;
-	array();
 	// To enable "Generate Bars" Button
 	button3.disabled = false;
 	button3.style.backgroundColor = "#6f459e";
 	}
+}
+//css by using jquery for printing input array
+$(document).ready(function(){
+	$("#result").css({"border":"#6f459e solid 2px","border-radius":"10px","padding":"2px","background-color":"white","color":"black","font-size":"20px"});
+});
+
 // To disable "Submit " Button
 button1.disabled = true;
 button1.style.backgroundColor = "lightgray";
@@ -73,12 +78,7 @@ button2.disabled = false;
 button2.style.backgroundColor = "#6f459e";
 }
 
-function array() {
-	//css by using jquery for printing input array
-	$(document).ready(function(){
-		$("#result").css({"border":"#6f459e solid 2px","border-radius":"10px","padding":"2px","background-color":"white","color":"black","font-size":"20px"});
-	});
-	}
+	
 
 // Function to generate bars
 function generatebars() {
