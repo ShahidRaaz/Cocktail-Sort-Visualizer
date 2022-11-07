@@ -275,14 +275,18 @@ while (swapped == true) {
 	s = s + 1;
 }
 
-
 //Sorted array
 var sorted=" ";
 for (var x = 0; x < bars.length; x++) {
 	bars[x].style.backgroundColor = "rgb(49, 226, 13)";
 	sorted +=bars[x].childNodes[0].innerText+" ";
 }
-
+// To pause the execution of code for 500 milliseconds
+await new Promise((resolve) =>
+setTimeout(() => {
+resolve();
+},500)
+);
 //After Sorting Completion to print sorted array
 alert("Sorting Completed");
 document.getElementById("sorting").innerHTML ="Sorted Array :"+ sorted;
