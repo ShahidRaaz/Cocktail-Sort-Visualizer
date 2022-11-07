@@ -56,8 +56,8 @@ function generatearray() {
 		document.getElementById("result").innerHTML ="Given Array is already sorted"
 	}
 	else if(count1==0){
-	document.getElementById("result").innerHTML ="Given Array:"+ resultString;
-	
+	document.getElementById("result").innerHTML ="Given Array :"+ resultString;
+
 	// To enable "Generate Bars" Button
 	button3.disabled = false;
 	button3.style.backgroundColor = "#6f459e";
@@ -66,6 +66,9 @@ function generatearray() {
 $(document).ready(function(){
 	$("#result").css({"border":"#6f459e solid 2px","border-radius":"10px","padding":"2px","background-color":"white","color":"black","font-size":"20px"});
 });
+// To disable "Submit " Button
+button1.disabled = true;
+button1.style.backgroundColor = "lightgray";
 
 // To enable "Clear" button 
 button2.disabled = false;
@@ -73,14 +76,12 @@ button2.style.backgroundColor = "#6f459e";
 }
 
 // Function to generate bars
-async function generatebars() {
+function generatebars() {
 
 // To disable "Generate Bars" Button
 	button3.disabled = true;
 	button3.style.backgroundColor = "lightgray";
-// To disable "Submit " Button
-	button1.disabled = true;
-	button1.style.backgroundColor = "lightgray";
+
 //setting container width
 	container.style.width= `${svl * 35}px`;
 
@@ -116,14 +117,6 @@ async function generatebars() {
 
 	// Append "div" to "data-container div"
 	container.appendChild(bar);
-
-	// To pause the execution of code for 500 milliseconds
-	await new Promise((resolve) =>
-		setTimeout(() => {
-		resolve();
-		}, 500)
-	);
-
 }
 
 // To enable the Sort Button
@@ -293,7 +286,7 @@ for (var x = 0; x < bars.length; x++) {
 
 //After Sorting Completion to print sorted array
 alert("Sorting Completed");
-document.getElementById("sorting").innerHTML ="Sorted Array is"+ sorted;
+document.getElementById("sorting").innerHTML ="Sorted Array :"+ sorted;
 }
 
 //To clear the all values and graph
