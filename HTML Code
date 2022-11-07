@@ -23,7 +23,7 @@
 	<h2 class="head2">Enter The Numbers Separated by Space </h2>
 	
 	<!-- TextBox to taking input -->
-	<input type="text" id="arrv" onkeyup="validate()">
+	<input type="text" id="arrv" onkeyup="input()">
 
 	<!-- Button for generating array -->
 	<button disabled="true" onclick="generatearray()" id="Button1" >Submit </button>
