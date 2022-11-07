@@ -34,6 +34,7 @@ if(Values.value.length>0){
 function generatearray() {
 	let count=0;
 	let snc=0;
+	Values.disabled=true;
 	//splitting the values into numbers
 	const arrayValues = Values.value;
 		splittedValues= arrayValues.split(' ');
@@ -56,7 +57,7 @@ function generatearray() {
 		document.getElementById("result").innerHTML ="Given Array is already sorted"
 		array();
 	}
-	else if(count==0){
+	else if(count==0 && snc==0){
 	document.getElementById("result").innerHTML ="Given Array :"+ resultString;
 	array();
 	// To enable "Generate Bars" Button
