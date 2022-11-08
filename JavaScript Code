@@ -43,7 +43,7 @@ function generatearray() {
 			for (let i = 0; i < svl; i++) {
 				let j=i+1;
 				if(splittedValues[i]<=100){
-					if((j<=svl)&&(splittedValues[i]<splittedValues[j])){
+					if((j<=svl)&&(splittedValues[i]<=splittedValues[j])){
 						snc++;
 					}
 					resultString += splittedValues[i]+" ";
