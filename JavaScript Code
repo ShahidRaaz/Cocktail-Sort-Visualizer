@@ -287,6 +287,7 @@ setTimeout(() => {
 resolve();
 },500)
 );
+
 //After Sorting Completion to print sorted array
 alert("Sorting Completed");
 document.getElementById("sorting").innerHTML ="Sorted Array :"+ sorted;
