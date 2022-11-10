@@ -98,7 +98,7 @@ function generatebars() {
 	for (let i = 0; i < svl; i += 1) {
 	
 	// To generate values
-	var value = parsInt(splittedValues[i]);
+	var value = splittedValues[i];
 
 	// To create element "div"
 	const bar = document.createElement("div");
