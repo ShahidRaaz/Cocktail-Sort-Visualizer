@@ -47,7 +47,6 @@ function generatearray() {
 					sv1=parseInt(splittedValues[i]); sv2=parseInt(splittedValues[j])
 					if((j<svl) && (sv1 <= sv2)){
 						snc++;
-						alert("Already sorted number "+snc)
 					}
 					resultString += sv1+" ";
 				}else
