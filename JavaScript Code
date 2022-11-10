@@ -32,7 +32,7 @@ if(Values.value.length>0){
 
 //function to generate array from given value
 function generatearray() {
-	let count=0;
+	let count=0,count1=0;
 	let snc=0;
 	Values.disabled=true;
 	//splitting the values into numbers
@@ -40,23 +40,28 @@ function generatearray() {
 		splittedValues= arrayValues.split(' ');
 		resultString = " ";
 		svl=splittedValues.length;
-		alert("Length of array "+svl);
 			for (let i = 0; i < svl; i++) {
 				let j=i+1;
-				if(splittedValues[i] <= 100){
+				if(splittedValues[i]=="")
+				{
+					count1++;
+					alert("There should be single space between each number");
+				}
+				else if(0 <= splittedValues[i] <= 100){
 					sv1=parseInt(splittedValues[i]); sv2=parseInt(splittedValues[j])
 					if((j<svl) && (sv1 <= sv2)){
 						snc++;
 					}
-					resultString += sv1+" ";
-				}else
+					resultString += splittedValues[i]+" ";
+				}
+				else
 				{
 					count++;
-					alert("Any Number should not be greater than 100");
+					alert("Any Number should not be greater than 100")
 				}
 			}
 			
-	if(count==0){
+	if(count==0 && count1==0){
 	if(snc==svl-1 || svl==1){
 		document.getElementById("result").innerHTML ="Given Array is already sorted"
 	}
