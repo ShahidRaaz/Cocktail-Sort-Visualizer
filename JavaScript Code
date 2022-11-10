@@ -54,7 +54,7 @@ function generatearray() {
 				}
 			}
 	if(count==0){
-	if(snc==svl || svl==1){
+	if(snc==svl-1 || svl==1){
 		document.getElementById("result").innerHTML ="Given Array is already sorted"
 	}
 	else{
