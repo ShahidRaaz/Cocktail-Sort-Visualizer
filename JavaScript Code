@@ -40,19 +40,23 @@ function generatearray() {
 		splittedValues= arrayValues.split(' ');
 		resultString = " ";
 		svl=splittedValues.length;
+		alert("Length of array "+svl);
 			for (let i = 0; i < svl; i++) {
 				let j=i+1;
-				if(splittedValues[i]<=100){
-					if((j<=svl)&&(splittedValues[i]<=splittedValues[j])){
+				if(splittedValues[i] <= 100){
+					sv1=parseInt(splittedValues[i]); sv2=parseInt(splittedValues[j])
+					if((j<svl) && (sv1 <= sv2)){
 						snc++;
+						alert("Already sorted number "+snc)
 					}
-					resultString += splittedValues[i]+" ";
+					resultString += sv1+" ";
 				}else
 				{
 					count++;
 					alert("Any Number should not be greater than 100");
 				}
 			}
+			
 	if(count==0){
 	if(snc==svl-1 || svl==1){
 		document.getElementById("result").innerHTML ="Given Array is already sorted"
@@ -94,7 +98,7 @@ function generatebars() {
 	for (let i = 0; i < svl; i += 1) {
 	
 	// To generate values
-	var value = splittedValues[i];
+	var value = parsInt(splittedValues[i]);
 
 	// To create element "div"
 	const bar = document.createElement("div");
